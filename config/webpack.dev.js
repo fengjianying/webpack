@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const htmlPlugin = require('html-webpack-plugin');
 module.exports = {
@@ -57,17 +58,26 @@ module.exports = {
             }
         ]
     },
+    node: {
+        fs: 'empty'
+    },
     //插件 用于生产的模板和各项功能
     plugins: [
         new htmlPlugin({
             minify: { //是对html文件进行压缩
-                removeAttributeQuotes: true //removeAttrubuteQuotes是却掉属性的双引号。
+                removeAttributeQuotes: true //removeAttrubuteQuotes是去掉属性的双引号。
             },
             hash: true, //为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。
             template: './src/index.html', //是要打包的html模版路径和文件名称。
             filename:'../dist/index.html',//打包输出文件的地址和文件名称
             showErrors: true,
 
+        }),
+        //全局加载辅助类工具
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "windows.jQuery": "jquery"
         })
     ],
     //配置webpack开发服务功能
