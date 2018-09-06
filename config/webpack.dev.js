@@ -14,7 +14,7 @@ module.exports = {
         //打包路径
         path: path.resolve(__dirname, '../dist'),
         //打包文件名称
-        filename: 'js/[name]-[hash].js'
+        filename: 'js/[name]-[hash:5].js'
     },
     //模块:例如解读css 图片转换,压缩
     module: {
@@ -52,7 +52,7 @@ module.exports = {
                 use: [{
                     loader: 'html-loader',
                     options: {
-                        minimize: true
+                        minimize: false
                     }
                 }],
             }
@@ -64,9 +64,7 @@ module.exports = {
     //插件 用于生产的模板和各项功能
     plugins: [
         new htmlPlugin({
-            minify: { //是对html文件进行压缩
-                removeAttributeQuotes: true //removeAttrubuteQuotes是去掉属性的双引号。
-            },
+            minify: false,//是否进行压缩
             hash: true, //为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。
             template: './src/index.html', //是要打包的html模版路径和文件名称。
             filename:'../dist/index.html',//打包输出文件的地址和文件名称
@@ -87,7 +85,7 @@ module.exports = {
         //服务器IP地址,可以使用ip或者localhost
         host: 'localhost',
         //自动打开浏览器
-        open: true,
+        open: false,
         //配置服务端口号
         port: 8888
     }

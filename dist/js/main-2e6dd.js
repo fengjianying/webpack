@@ -148,7 +148,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/_css-loader@1.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("(function aaa() {\r\n    __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\r\n    console.log('aaa');\r\n    console.log('bbb');\r\n})()\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("(function aaa() {\r\n    __webpack_require__(/*! ../css/index.css */ \"./src/css/index.css\");\r\n})()\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

@@ -1,11 +1,9 @@
 require('../css/a.less');
-
+require('./jqExtend.js');
 var Handlebar = require('handlebars');
 var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-    "{{kids.length}} kids:</p>" +
-    "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
+    "{{kids.length}} kids:</p>" + "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
 var template = Handlebar.compile(source);
-
 var data = {
     "name": "Alan",
     "hometown": "Somewhere, TX",
@@ -18,4 +16,5 @@ var data = {
     }]
 };
 var result = template(data);
+console.log($.getObjectLength(data));
 $('#index').append(result);
