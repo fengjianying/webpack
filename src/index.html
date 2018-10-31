@@ -11,6 +11,14 @@
         hello is  me!
     </div>
     <div class="img"></div>
-    <div id="index"></div>
+    <div id="container"></div>
+    <script id="index" type="text/x-handlebars-template">
+        <p>Hello, my name is {{name}}. I am from {{hometown}}. I have {{kids.length}} kids:</p>
+        <ul>
+            {{#kids}}
+            <li>{{name}} is {{age}}</li>
+            {{/kids}}
+        </ul>
+    </script>
 </body>
 </html>

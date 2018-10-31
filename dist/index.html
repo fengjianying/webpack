@@ -11,6 +11,14 @@
         hello is  me!
     </div>
     <div class="img"></div>
-    <div id="index"></div>
-<script type="text/javascript" src="js/main-2e6dd.js?2e6ddbd6ca0f492d5149"></script><script type="text/javascript" src="js/main2-2e6dd.js?2e6ddbd6ca0f492d5149"></script></body>
+    <div id="container"></div>
+    <script id="index" type="text/x-handlebars-template">
+        <p>Hello, my name is {{name}}. I am from {{hometown}}. I have {{kids.length}} kids:</p>
+        <ul>
+            {{#kids}}
+            <li>{{name}} is {{age}}</li>
+            {{/kids}}
+        </ul>
+    </script>
+<script type="text/javascript" src="js/main-4dafd.js?4dafdc0b3e0ce3e6b014"></script><script type="text/javascript" src="js/main2-4dafd.js?4dafdc0b3e0ce3e6b014"></script></body>
 </html>
